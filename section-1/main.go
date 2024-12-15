@@ -1,6 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
 
 func main() {
 	// 1. String
@@ -40,4 +46,22 @@ func main() {
 	const Pi = 3.14 // notice Pi first letter is Capital that makes it public
 	fmt.Println(Pi)
 	fmt.Printf("constant Pi is of type: %T\n", Pi)
+
+	// Refer to comma-ok syntax used for error handling in go:
+	fmt.Println("\nEnter a number")
+	reader := bufio.NewReader(os.Stdin)
+	input, _ := reader.ReadString('\n')
+	input = strings.TrimSpace(input)
+	fmt.Println(input)
+	fmt.Printf("Type of input is: %T\n", input)
+
+	// Type conversion
+	convertedNum, err := strconv.ParseFloat(input, 64)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(convertedNum)
+		fmt.Printf("Type of converted input: %T\n", convertedNum)
+	}
 }

@@ -1,5 +1,8 @@
 # Data Types and Control Structures 
 
+---
+## Data Types
+
 ### Atomic Data Types
 
 1. String
@@ -23,3 +26,16 @@
 1. Interface
 2. Functions - functions can also be treated as type in go
 3. Channels
+
+---
+
+## Error Handling
+
+### Comma ok/err syntax
+```go
+input,_ := <some condition>
+input,err := <some condition>
+_,_ := <some condition>
+```
+
+---
