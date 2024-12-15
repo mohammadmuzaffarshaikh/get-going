@@ -51,7 +51,9 @@ func main() {
 	fmt.Println("\nEnter a number")
 	reader := bufio.NewReader(os.Stdin)
 	input, _ := reader.ReadString('\n')
+
 	input = strings.TrimSpace(input)
+
 	fmt.Println(input)
 	fmt.Printf("Type of input is: %T\n", input)
 
