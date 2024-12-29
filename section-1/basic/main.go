@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -47,7 +48,7 @@ func main() {
 	fmt.Println(Pi)
 	fmt.Printf("constant Pi is of type: %T\n", Pi)
 
-	// Refer to comma-ok syntax used for error handling in go:
+	// 2. Refer to comma-ok syntax used for error handling in go:
 	fmt.Println("\nEnter a number")
 	reader := bufio.NewReader(os.Stdin)
 	input, _ := reader.ReadString('\n')
@@ -66,4 +67,14 @@ func main() {
 		fmt.Println(convertedNum)
 		fmt.Printf("Type of converted input: %T\n", convertedNum)
 	}
+
+	// 3. Time in go
+	// follows a wierd syntax
+	presentTime := time.Now()
+	fmt.Println(presentTime)
+
+	fmt.Println(presentTime.Format("01-02-2006 Monday 15:04:05")) // format follows a wierd syntax that must always be like this.
+
+	createDate := time.Date(2025, time.December, 20, 7, 23, 0, 0, time.Local)
+	fmt.Println(createDate.Format("01-02-2006 Monday"))
 }
